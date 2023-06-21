@@ -1,0 +1,102 @@
+.survive-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#response-image {
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.yes-button,
+.no-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    border: 2px solid black;
+}
+
+.yes-button {
+    background-color: green;
+    color: white;
+}
+
+.no-button {
+    background-color: red;
+    color: white;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: darkred;
+    padding: 0.5rem; /* Adjust the padding as desired */
+    border-radius: 3rem;
+    margin: 2rem;
+    border: 2px solid black;
+}
+
+.countdown div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.time-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem; /* Adjust the margin-bottom value as desired */
+    text-transform: uppercase;
+}
+
+.time-object {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.hour,
+.minute,
+.second {
+    font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+    .countdown {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .countdown {
+        font-size: 2rem;
+    }
+}

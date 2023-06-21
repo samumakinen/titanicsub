@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Titanic Sub</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="countdown">
+            <div class="time-heading">Oxygen left:</div>
+            <div class="time-object">
+                <div class="hour">0</div>
+            </div>
+            <div class="time-object">
+                <div class="minute">0</div>
+            </div>
+            <div class="time-object">
+                <div class="second">0</div>
+            </div>
+        </div>
+        <h2 class="survive-heading">Do you think they will survive?</h2>
+        <div class="button-container">
+            <button class="yes-button" onclick="GetYes()">Yes</button>
+            <button class="no-button" onclick="GetNo()">No</button>
+        </div>
+        <div class="image-container">
+            <img
+                id="response-image"
+                src="https://cdn.pixabay.com/photo/2017/05/13/09/04/question-mark-2309040_1280.jpg"
+                alt="Response Image"
+            />
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
