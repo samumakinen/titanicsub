@@ -13,9 +13,9 @@ const countdown = () => {
     const remainingMinutes = Math.floor((gap % hour) / minute);
     const remainingSeconds = Math.floor((gap % minute) / second);
 
-    document.querySelector(".hour").innerText = remainingHours;
-    document.querySelector(".minute").innerText = remainingMinutes;
-    document.querySelector(".second").innerText = remainingSeconds;
+    document.querySelector(".hour").innerText = remainingHours + "h";
+    document.querySelector(".minute").innerText = remainingMinutes + "m";
+    document.querySelector(".second").innerText = remainingSeconds + "s";
 
     // flash black and red every second
     const responseImage = document.getElementById("response-image");
