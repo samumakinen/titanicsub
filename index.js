@@ -1,37 +1,5 @@
-function GetYes() {
-    fetch("https://yesno.wtf/api?force=yes")
-        .then((response) => response.json())
-        .then((data) => {
-            const jsonResponse = data;
-            console.log(jsonResponse);
-
-            // Update the image source with the URL from the JSON response
-            const responseImage = document.getElementById("response-image");
-            responseImage.src = jsonResponse.image;
-        })
-        .catch((error) => {
-            console.log("Error:", error);
-        });
-}
-
-function GetNo() {
-    fetch("https://yesno.wtf/api?force=no")
-        .then((response) => response.json())
-        .then((data) => {
-            const jsonResponse = data;
-            console.log(jsonResponse);
-
-            // Update the image source with the URL from the JSON response
-            const responseImage = document.getElementById("response-image");
-            responseImage.src = jsonResponse.image;
-        })
-        .catch((error) => {
-            console.log("Error:", error);
-        });
-}
-
 const countdown = () => {
-    const countDate = new Date("June 22, 2023 14:00:00").getTime();
+    const countDate = new Date("June 21, 2023 11:00:00").getTime();
     const now = new Date().getTime();
     const gap = countDate - now;
 
@@ -45,9 +13,13 @@ const countdown = () => {
     const remainingMinutes = Math.floor((gap % hour) / minute);
     const remainingSeconds = Math.floor((gap % minute) / second);
 
-    document.querySelector(".hour").innerText = remainingHours + "h";
-    document.querySelector(".minute").innerText = remainingMinutes + "m";
-    document.querySelector(".second").innerText = remainingSeconds + "s";
+    document.querySelector(".hour").innerText = remainingHours;
+    document.querySelector(".minute").innerText = remainingMinutes;
+    document.querySelector(".second").innerText = remainingSeconds;
+
+    // flash black and red every second
+    const responseImage = document.getElementById("response-image");
+    responseImage.classList.toggle("flash", remainingSeconds % 2 === 0);
 };
 
 setInterval(countdown, 1000);

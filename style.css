@@ -12,40 +12,34 @@
     margin-top: 2rem;
 }
 
+@keyframes flashAnimation {
+    0% {
+        filter: invert(0%);
+    }
+    50% {
+        filter: invert(100%);
+    }
+    100% {
+        filter: invert(0%);
+    }
+}
+
+.flash {
+    animation: flashAnimation 1s infinite;
+}
+
 #response-image {
     max-width: 100%;
     max-height: 500px;
     height: auto;
 }
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+.flash-black {
+    filter: invert(100%) grayscale(100%);
 }
 
-.yes-button,
-.no-button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    margin: 0 0.5rem;
-    border: 2px solid black;
+.flash-red {
+    filter: invert(100%);
 }
-
-.yes-button {
-    background-color: green;
-    color: white;
-}
-
-.no-button {
-    background-color: red;
-    color: white;
-}
-
 .countdown {
     display: flex;
     justify-content: center;
