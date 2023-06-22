@@ -1,25 +1,20 @@
-const countdown = () => {
-    const countDate = new Date("June 22, 2023 13:00:00").getTime();
-    const now = new Date().getTime();
-    const gap = countDate - now;
+function calculateDuration() {
+    var providedDate = new Date("June 22, 2023 14:00:00");
+    var currentDate = new Date();
+    var timeDifference = Math.abs(currentDate - providedDate);
 
-    // how the time works
-    const second = 1000;
-    const minute = second * 60;
-    const hour = minute * 60;
+    var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(
+        (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    // calculate the time
-    const remainingHours = Math.floor((gap % (24 * hour)) / hour);
-    const remainingMinutes = Math.floor((gap % hour) / minute);
-    const remainingSeconds = Math.floor((gap % minute) / second);
+    document.querySelector(".day").innerText = days + " days";
+    document.querySelector(".hour").innerText = hours + " hours";
+    document.querySelector(".minute").innerText = minutes + " minutes";
+    document.querySelector(".second").innerText = seconds + " seconds";
+}
 
-    document.querySelector(".hour").innerText = remainingHours + "h";
-    document.querySelector(".minute").innerText = remainingMinutes + "m";
-    document.querySelector(".second").innerText = remainingSeconds + "s";
-
-    // flash black and red every second
-    const responseImage = document.getElementById("response-image");
-    responseImage.classList.toggle("flash", remainingSeconds % 2 === 0);
-};
-
-setInterval(countdown, 1000);
+// Call the function to calculate and display the duration
+setInterval(calculateDuration, 1000);
